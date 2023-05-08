@@ -6,19 +6,30 @@ import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 import { CreateTodoButton } from './CreateTodoButton';
 
+const defaultTodos = [
+  {text:'Cortar cebolla', completed: true},
+  {text:'Montar Caballo', completed: false},
+  {text:'Rotar pepino', completed: false},
+  {text:'Peinar peludos', completed: true},
+]
 
 function App() {
   return (
-    <div className="App">
-      <TodoCounter />
+    <>
+      <TodoCounter total="3" completed="5"/> 
       <TodoSearch />
 
       <TodoList>
-        <TodoItem />
+        {defaultTodos.map(todo=>{
+          return(<TodoItem 
+            key={todo.text} 
+            text={todo.text} 
+            completed={todo.completed}/>)
+        })}
       </TodoList>
 
       <CreateTodoButton />
-    </div>
+    </>
   );
 }
 
