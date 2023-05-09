@@ -4,6 +4,13 @@
     font-size: var(--md);
     font-weight: 300;
 }
+.task--completed{
+    display: inline-block;
+    
+    text-decoration: line-through;
+    font-size: var(--md);
+    font-weight: 300;
+}
 div ul li .icons{
     color: var(--onSfc);
 }
