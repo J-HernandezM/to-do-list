@@ -1,0 +1,42 @@
+.task{
+    display: inline-block;
+
+    font-size: var(--md);
+    font-weight: 300;
+}
+div ul li .icons{
+    color: var(--onSfc);
+}
+.todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    width: 85%;
+    height: 55rem;
+    margin-bottom: 20rem;
+    padding: 0 10rem 0 10rem;
+
+    background-color: var(--surface5);
+    border-radius: 8rem;
+    border: 1px solid var(--onSfc);
+}
+.check{
+    transition: color 0.3s;
+}
+.check:hover{
+    color: var(--complementary);
+    cursor: pointer;
+}
+.close:hover{
+    color:var(--error);
+    cursor: pointer;
+}
+.todo:hover{
+    background-color: var(--surface8);
+    cursor: pointer;
+}
+.inactive{
+    display: none;
+}

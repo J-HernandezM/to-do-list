@@ -14,8 +14,11 @@ const defaultTodos = [
 function App() {
   return (
     <>
-      <TodoCounter total="3" completed="5"/> 
-      <TodoSearch />
+      <TodoCounter total="10" completed="3"/> 
+      <div className='wrap'>
+        <TodoSearch />
+        <CreateTodoButton />
+      </div>
 
       <TodoList>
         {defaultTodos.map(todo=>{
@@ -26,7 +29,6 @@ function App() {
         })}
       </TodoList>
 
-      <CreateTodoButton />
     </>
   );
 }

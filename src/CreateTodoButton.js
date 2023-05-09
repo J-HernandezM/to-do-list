@@ -1,6 +1,7 @@
+import './CreateTodoButton.css'
 function CreateTodoButton(){
     return(
-        <button>+</button>
+        <span className="fa-solid fa-circle-plus fa-2xl btn"></span>
     )
 }
 export {CreateTodoButton}

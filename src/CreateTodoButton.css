@@ -1,0 +1,10 @@
+.btn{
+    color: var(--primary);
+    transform: scale(1);
+    transition: transform 0.2s;
+    margin-left: 24rem;
+}
+.btn:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+}

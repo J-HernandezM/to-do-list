@@ -1,5 +1,11 @@
 .counter{
     padding: 48px;
+
     text-align: center;
-    font-size: 24rem;
+    font-size: var(--xl);
+    font-weight: 500;
+}
+.counter__numbers{
+    font-weight: 700;
+    color: var(--primary);
 }
