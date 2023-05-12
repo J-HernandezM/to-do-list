@@ -10,7 +10,7 @@ function TodoItem(props){
         updatedTodos.push(todo)
       }
     })
-    saveTodo(updatedTodos)
+    props.setTodos(updatedTodos)
   }
   function  uncheckTodo(uncheckThis){
     const updatedTodos=[]
@@ -22,7 +22,7 @@ function TodoItem(props){
         updatedTodos.push(todo)
       }
     })
-    saveTodo(updatedTodos)
+    props.setTodos(updatedTodos)
   }
   function  deleteTodo(deleteThis){
     const updatedTodos=[]
@@ -31,13 +31,13 @@ function TodoItem(props){
         updatedTodos.push(todo)
       }
     })
-    saveTodo(updatedTodos)
+    props.setTodos(updatedTodos)
   }
-  function saveTodo(newTodoArray){
-    const stringedArray = JSON.stringify(newTodoArray)
-    localStorage.setItem("TODOS_V1", stringedArray)
-    props.setTodos(newTodoArray) 
-  }
+  // function saveTodo(newTodoArray){
+  //   const stringedArray = JSON.stringify(newTodoArray)
+  //   localStorage.setItem("TODOS_V1", stringedArray)
+  //   props.setTodos(newTodoArray) 
+  // }
     return(
       <li className='todo'>
         <span className={`fa-regular fa-circle-check fa-lg icons check ${props.completed?"inactive":"check"}`} onClick={(event)=>{
