@@ -10,7 +10,7 @@ function TodoItem(props){
         updatedTodos.push(todo)
       }
     })
-    props.setTodos(updatedTodos)
+    saveTodo(updatedTodos)
   }
   function  uncheckTodo(uncheckThis){
     const updatedTodos=[]
@@ -22,7 +22,7 @@ function TodoItem(props){
         updatedTodos.push(todo)
       }
     })
-    props.setTodos(updatedTodos)
+    saveTodo(updatedTodos)
   }
   function  deleteTodo(deleteThis){
     const updatedTodos=[]
@@ -31,7 +31,12 @@ function TodoItem(props){
         updatedTodos.push(todo)
       }
     })
-    props.setTodos(updatedTodos)
+    saveTodo(updatedTodos)
+  }
+  function saveTodo(newTodoArray){
+    const stringedArray = JSON.stringify(newTodoArray)
+    localStorage.setItem("TODOS_V1", stringedArray)
+    props.setTodos(newTodoArray) 
   }
     return(
       <li className='todo'>
