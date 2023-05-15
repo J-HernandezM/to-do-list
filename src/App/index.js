@@ -11,7 +11,12 @@ const defaultTodos = [
 
 function App() {
   //cambiamos el usestate por nuestro customhook al cual le asignaremos todos a items y setTodos a saveItem
-  const [todos, setTodos] = useLocalStorage('TODOS_V1', [])
+  const {
+    items: todos, 
+    saveItem:setTodos, 
+    loading, 
+    error
+  } = useLocalStorage('TODOS_V1', [])
   const [searchValue, setSearchValue] = React.useState('')
   //Contando todos
   //length de un nuevo array que contenga los todos con completed true
@@ -29,6 +34,8 @@ function App() {
 
   return (
     <AppUI 
+      loading={loading}
+      error={error}
       totalTodos={totalTodos}
       completedTodos={completedTodos}
       searchValue={searchValue}
