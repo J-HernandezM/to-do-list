@@ -1,0 +1,39 @@
+.todo--loading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    width: 85%;
+    height: 55rem;
+    margin-bottom: 20rem;
+    padding: 0 10rem 0 10rem;
+
+    
+    border-radius: 8rem;
+}
+.check--loading, .close--loading{
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+}
+.check--loading, .close--loading, .todo--loading{
+    border: 1rem solid #ffffff0c;
+    background: #121212;
+    background: linear-gradient(90deg, #121212 0%, #1d1d1d 100%);
+    background-size: 400% 400%;
+    animation: loadingAnimation 3s ease-in-out;
+}
+
+@keyframes loadingAnimation {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+    
+}
