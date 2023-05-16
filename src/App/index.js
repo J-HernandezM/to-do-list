@@ -1,6 +1,6 @@
 import React from 'react';
-import { useLocalStorage } from './useLocalStorage';
 import { AppUI } from './AppUI';
+import { TodoProvider } from '../TodoContext';
  // eslint-disable-next-line
 const defaultTodos = [
   {text:'Cortar cebolla', completed: true},
@@ -10,40 +10,11 @@ const defaultTodos = [
 ]
 
 function App() {
-  //cambiamos el usestate por nuestro customhook al cual le asignaremos todos a items y setTodos a saveItem
-  const {
-    items: todos, 
-    saveItem:setTodos, 
-    loading, 
-    error
-  } = useLocalStorage('TODOS_V1', [])
-  const [searchValue, setSearchValue] = React.useState('')
-  //Contando todos
-  //length de un nuevo array que contenga los todos con completed true
-  const completedTodos = todos.filter(todo=>todo.completed).length
-  const totalTodos = todos.length
-  //Buscando todos
-  // eslint-disable-next-line
-  const found = todos.filter((todo)=>{
-    if(searchValue!==''){
-      if(todo.text.toLowerCase().includes(searchValue.toLowerCase())){
-        return todo
-      }
-    }else{return todo}
-  })
-
   return (
-    <AppUI 
-      loading={loading}
-      error={error}
-      totalTodos={totalTodos}
-      completedTodos={completedTodos}
-      searchValue={searchValue}
-      setSearchValue={setSearchValue}
-      setTodos={setTodos}
-      todos={todos}
-      found={found}
-    />
+    //El Provider es para decirle que a este componente children le pasaremos nuestras nuevas propiedades globales
+    <TodoProvider>
+      <AppUI />
+    </TodoProvider>
   );
 }
 export default App;
