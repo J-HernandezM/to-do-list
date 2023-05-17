@@ -15,6 +15,7 @@ function TodoProvider({children}){
     error
     } = useLocalStorage('TODOS_V1', [])
     const [searchValue, setSearchValue] = React.useState('')
+    const [modalOn, setModalOn] = React.useState(false)
     //Contando todos
     //length de un nuevo array que contenga los todos con completed true
     const completedTodos = todos.filter(todo=>todo.completed).length
@@ -42,6 +43,8 @@ function TodoProvider({children}){
             setTodos,
             todos,
             found,
+            modalOn,
+            setModalOn
         }}>
             {children}
         </TodoContext.Provider>

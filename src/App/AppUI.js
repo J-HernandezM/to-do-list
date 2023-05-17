@@ -7,7 +7,9 @@ import { CreateTodoButton } from '../CreateTodoButton';
 import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { TodosEmpty } from '../TodosEmpty';
+import { Modal } from '../Modal';
 import { TodoContext } from '../TodoContext';
+import { CreateTodo } from '../CreateTodo';
 
 function AppUI(){
   //Con esta sintaxis usamos el Hook de context con las propiedades que AppUI consume
@@ -17,13 +19,19 @@ function AppUI(){
     setTodos,
     todos,
     found,
+    modalOn,
+    setModalOn
   } = React.useContext(TodoContext)
     return(
         <>
             <TodoCounter/> 
             <div className='wrap'>
               <TodoSearch/>
-              <CreateTodoButton />
+              <CreateTodoButton/>
+              {modalOn && 
+                <Modal>
+                  <CreateTodo/>
+                </Modal>}
             </div>         
             <TodoList>
               {loading && 

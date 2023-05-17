@@ -1,4 +1,4 @@
-.searchbar{
+.todoInput{
     height: 40rem;
     min-width: 270rem;
     padding-left: 20rem;
@@ -12,7 +12,7 @@
     outline: 1px solid transparent;
     border: none;
 }
-.searchbar::placeholder{
+.todoInput::placeholder{
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 300;
 }
