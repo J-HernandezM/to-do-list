@@ -30,6 +30,13 @@ function TodoProvider({children}){
     }else{return todo}
     })
     
+    function addNewTodo(newTodotxt){
+        const newTodo = {text: newTodotxt, completed: false}
+        const updateThisArray = [...todos]
+        updateThisArray.push(newTodo)
+        setTodos(updateThisArray)
+    }
+
     return(
         //En value le pasamos las props que queremos que sean globales
         //El children es para decirle que lo que le pasemos como hijo sera metido dentro del TodoContext.Provider
@@ -44,7 +51,8 @@ function TodoProvider({children}){
             todos,
             found,
             modalOn,
-            setModalOn
+            setModalOn,
+            addNewTodo
         }}>
             {children}
         </TodoContext.Provider>

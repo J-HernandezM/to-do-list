@@ -20,7 +20,6 @@ function AppUI(){
     todos,
     found,
     modalOn,
-    setModalOn
   } = React.useContext(TodoContext)
     return(
         <>
@@ -42,7 +41,7 @@ function AppUI(){
                 </>
               }
               {error && <TodosError />}
-              {(!loading && todos.lenght===0) && <TodosEmpty />}
+              {(!loading && todos.length===0) && <TodosEmpty />}
 
               {found.map(todo=>{
                 return(<TodoItem

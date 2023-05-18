@@ -1,0 +1,9 @@
+.emptyBox{
+    display: grid;
+    place-items: center;
+
+    min-height: 200rem;
+}
+.emptyText{
+    font-size: var(--lg);
+}

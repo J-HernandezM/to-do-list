@@ -42,18 +42,15 @@ function TodoItem(props){
       <li className='todo'>
         <span className={`fa-regular fa-circle-check fa-lg icons check ${props.completed?"inactive":"check"}`} onClick={(event)=>{
           const message = event.target.parentElement.childNodes[2].textContent
-          console.log('completar');
           checkTodo(message)
         }}></span>
         <span className={`fa-solid fa-circle-check fa-lg icons ${props.completed?"checked":"inactive"}`} style={{color: '#0268ee'}} onClick={(event)=>{
           const message = event.target.parentElement.childNodes[2].textContent
-          console.log('descompletar');
           uncheckTodo(message)
         }}></span>
         <p className={`${props.completed?"task--completed":"task"}`}>{props.text}</p>
         <span className="fa-regular fa-circle-xmark fa-lg icons close" onClick={(event)=>{
           const message = event.target.parentElement.childNodes[2].textContent
-          console.log('eliminar');
           deleteTodo(message)
         }}></span>
       </li>
