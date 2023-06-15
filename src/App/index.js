@@ -10,6 +10,7 @@ import { TodosError } from '../TodosError';
 import { TodosEmpty } from '../TodosEmpty';
 import { Modal } from '../Modal';
 import { CreateTodo } from '../CreateTodo';
+import { SearchEmpty } from '../TodosEmpty/SearchEmpty';
  // eslint-disable-next-line
 const defaultTodos = [
   {text:'Cortar cebolla', completed: true},
@@ -54,27 +55,33 @@ function App() {
                     setModalOn ={setModalOn}
                     addNewTodo ={addNewTodo}/>
                 </Modal>}
-            </div>         
-            <TodoList>
-              {loading && 
+            </div>
+            {/* Aplicamos render props a TodoList */}   
+            <TodoList 
+              error={error}
+              loading={loading}
+              searchValue={searchValue}
+              todos={todos}
+              found={found}
+              onError={()=><TodosError/>}
+              onLoading={()=>
                 <>
-                  <TodosLoading />
-                  <TodosLoading />
-                  <TodosLoading />
+                    <TodosLoading/>
+                    <TodosLoading/>
+                    <TodosLoading/>
                 </>
               }
-              {error && <TodosError />}
-              {(!loading && todos.length===0) && <TodosEmpty />}
-
-              {found.map(todo=>{
-                return(<TodoItem
+              onEmpty={()=><TodosEmpty/>}
+              onEmptySearch={(search)=><SearchEmpty search={search}/>}
+              render={todo=>
+                <TodoItem
                   setTodos={setTodos}
                   todos={todos} 
                   key={todo.text} 
                   text={todo.text} 
-                  completed={todo.completed}/>)
-              })}
-            </TodoList>
+                  completed={todo.completed}/>
+                }
+            />      
         </>
   );
 }

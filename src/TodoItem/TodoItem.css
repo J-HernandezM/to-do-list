@@ -3,6 +3,10 @@
 
     font-size: var(--md);
     font-weight: 300;
+
+    text-align: center;
+    overflow-wrap: anywhere;
+    padding: 10rem 20rem 10rem 20rem;
 }
 .task--completed{
     display: inline-block;
@@ -21,7 +25,8 @@ div ul li .icons{
     position: relative;
 
     width: 85%;
-    height: 55rem;
+    max-width: 350rem;
+    min-height: 55rem;
     margin-bottom: 20rem;
     padding: 0 10rem 0 10rem;
 
