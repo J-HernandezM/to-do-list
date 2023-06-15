@@ -1,11 +1,9 @@
 import React from "react"
-import { TodoContext } from "../TodoContext"
 import './CreateTodo.css'
 import '../TodoSearch/TodoSearch.css'
 import '../CreateTodoButton/CreateTodoButton.css'
 
-function CreateTodo(){
-    const {setModalOn, addNewTodo} = React.useContext(TodoContext)
+function CreateTodo({setModalOn, addNewTodo}){
     const [newTodoText, setNewTodoText] = React.useState('') 
     
     return(

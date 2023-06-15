@@ -3,9 +3,8 @@ import { useLocalStorage } from "./useLocalStorage"
 
 
 //Creamos y nombramos este contexto
-const TodoContext = React.createContext()
 
-function TodoProvider({children}){
+function useTodo(){
     //En el provider definimos toda la logica global de este contexto
     //cambiamos el usestate por nuestro customhook al cual le asignaremos todos a items y setTodos a saveItem
     const {
@@ -37,10 +36,7 @@ function TodoProvider({children}){
         setTodos(updateThisArray)
     }
 
-    return(
-        //En value le pasamos las props que queremos que sean globales
-        //El children es para decirle que lo que le pasemos como hijo sera metido dentro del TodoContext.Provider
-        <TodoContext.Provider value={{
+    return({
             loading,
             error,
             totalTodos,
@@ -53,10 +49,8 @@ function TodoProvider({children}){
             modalOn,
             setModalOn,
             addNewTodo
-        }}>
-            {children}
-        </TodoContext.Provider>
+        }
     )
 }
 
-export {TodoContext, TodoProvider}
+export {useTodo}
