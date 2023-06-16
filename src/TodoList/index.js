@@ -8,7 +8,7 @@ function TodoList(props){
             {(props.todos.length===0 && !props.loading ) && props.onEmpty()}
             {(props.todos.length>0 && props.found.length===0) && props.onEmptySearch(props.searchValue)}
             {/* Renderizamos ahora si el contenido */}
-            {props.found.map(props.render || props.children)} {/* Al hacer map ya directamente envia su resultado al props.render */}
+            {!props.loading && props.found.map(props.render || props.children)} {/* Al hacer map ya directamente envia su resultado al props.render */}
         </ul>
     )
 }

@@ -40,6 +40,7 @@ function useLocalStorage(itemName, defaultItem){
 
     //Funcion de sincronizar, recargar
     function synchronize(){
+      setLoading(true)
       setSynchronized(false)
     }
 
