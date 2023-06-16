@@ -11,6 +11,7 @@ import { TodosEmpty } from '../TodosEmpty';
 import { Modal } from '../Modal';
 import { CreateTodo } from '../CreateTodo';
 import { SearchEmpty } from '../TodosEmpty/SearchEmpty';
+import { ChangeAlertWithListener } from '../ChangeAlert';
  // eslint-disable-next-line
 const defaultTodos = [
   {text:'Cortar cebolla', completed: true},
@@ -81,7 +82,8 @@ function App() {
                   text={todo.text} 
                   completed={todo.completed}/>
                 }
-            />      
+            />
+            <ChangeAlertWithListener />     
         </>
   );
 }
