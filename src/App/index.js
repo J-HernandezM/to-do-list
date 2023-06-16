@@ -34,7 +34,8 @@ function App() {
     totalTodos:total,
     completedTodos:completed,
     setModalOn, 
-    addNewTodo
+    addNewTodo,
+    synchronize
   } = useTodo()
   return (
           <>
@@ -83,7 +84,7 @@ function App() {
                   completed={todo.completed}/>
                 }
             />
-            <ChangeAlertWithListener />     
+            <ChangeAlertWithListener synchronize={synchronize} />     
         </>
   );
 }

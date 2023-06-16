@@ -1,6 +1,7 @@
 import React from 'react';
 //CUSTOM HOOK, ABSTRAER LOGICA PARA ALIVIANAR LA COMPLEJIDAD DEL COMPONENTE
 function useLocalStorage(itemName, defaultItem){
+    const [synchronized, setSynchronized] = React.useState(true)
     //creamos un nuevo estado
     const [items, setItems] = React.useState(defaultItem)
     //estado de carga y error
@@ -20,21 +21,31 @@ function useLocalStorage(itemName, defaultItem){
             setItems(parsedItem)
           }
           setLoading(false)
+
+          setSynchronized(true)
+
         }catch(error){
           console.log(error);
           setLoading(false)
           setError(true)
         }}, 2000)
         // eslint-disable-next-line
-      }, [])
+      }, [synchronized])
       //nueva forma de actualizar el estado
     function saveItem(newItemArray){
       const stringedArray = JSON.stringify(newItemArray)
       localStorage.setItem(itemName, stringedArray)
       setItems(newItemArray)
     }
+
+    //Funcion de sincronizar, recargar
+    function synchronize(){
+      setSynchronized(false)
+    }
+
+
     //retornamos ese estado y esa forma de actualizar el estado
-    return {items, saveItem, loading, error}
+    return {items, saveItem, loading, error, synchronize}
 }
 
 export {useLocalStorage}

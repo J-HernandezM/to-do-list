@@ -1,15 +1,20 @@
 import React from "react";
 import { withStorageListener } from "../withStorageListener";
 
-
-function ChangeAlert({show, toggleShow}){
+//Podemos acceder a las propiedades de nuestro HOC
+function ChangeAlert({show, toggleShow, synchronize}){
     if(show){
-        return (<p>Cambio la cumbia</p>)
+        return (
+        <div>
+            <p>Cambios recientes</p>
+            <button onClick={()=>{toggleShow()}}>Actualiza</button>
+        </div>)
+        
     }else{
-        return (<p>No cambio la cumbia</p>)
+        return (<p>Updated</p>)
     }
 }
-
+//Aqui cambiamos nuestro componente usando el HOC
 const ChangeAlertWithListener = withStorageListener(ChangeAlert)
 
 export {ChangeAlertWithListener}

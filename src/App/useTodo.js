@@ -11,7 +11,8 @@ function useTodo(){
     items: todos, 
     saveItem:setTodos, 
     loading, 
-    error
+    error,
+    synchronize
     } = useLocalStorage('TODOS_V1', [])
     const [searchValue, setSearchValue] = React.useState('')
     const [modalOn, setModalOn] = React.useState(false)
@@ -48,7 +49,8 @@ function useTodo(){
             found,
             modalOn,
             setModalOn,
-            addNewTodo
+            addNewTodo,
+            synchronize
         }
     )
 }
