@@ -14,6 +14,10 @@
     text-decoration: line-through;
     font-size: var(--md);
     font-weight: 300;
+
+    text-align: center;
+    overflow-wrap: anywhere;
+    padding: 10rem 20rem 10rem 20rem;
 }
 div ul li .icons{
     color: var(--onSfc);
