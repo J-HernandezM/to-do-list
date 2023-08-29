@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom'
 import './TodoItem.css'
 function TodoItem(props){
-  function checkTodo(checkThis){
+  function checkTodo(checkThisID){
     const updatedTodos=[]
     props.todos.forEach((todo)=>{
-      if(todo.text===checkThis){
+      if(todo.id===checkThisID){
         todo.completed=true
         updatedTodos.push(todo)
       }else{
@@ -12,10 +13,10 @@ function TodoItem(props){
     })
     props.setTodos(updatedTodos)
   }
-  function  uncheckTodo(uncheckThis){
+  function  uncheckTodo(uncheckThisID){
     const updatedTodos=[]
     props.todos.forEach((todo)=>{
-      if(todo.text===uncheckThis){
+      if(todo.id===uncheckThisID){
         todo.completed=false
         updatedTodos.push(todo)
       }else{
@@ -24,10 +25,10 @@ function TodoItem(props){
     })
     props.setTodos(updatedTodos)
   }
-  function  deleteTodo(deleteThis){
+  function  deleteTodo(deleteThisID){
     const updatedTodos=[]
     props.todos.forEach((todo)=>{
-      if(todo.text!==deleteThis){
+      if(todo.id!==deleteThisID){
         updatedTodos.push(todo)
       }
     })
@@ -39,20 +40,25 @@ function TodoItem(props){
   //   props.setTodos(newTodoArray) 
   // }
     return(
-      <li className='todo'>
+      <li id={props.todoID} className='todo'>
         <span className={`fa-regular fa-circle-check fa-lg icons check ${props.completed?"inactive":"check"}`} onClick={(event)=>{
-          const message = event.target.parentElement.childNodes[2].textContent
-          checkTodo(message)
+          const todoID = event.target.parentElement.id
+          checkTodo(todoID)
         }}></span>
         <span className={`fa-solid fa-circle-check fa-lg icons ${props.completed?"checked":"inactive"}`} style={{color: '#0268ee'}} onClick={(event)=>{
-          const message = event.target.parentElement.childNodes[2].textContent
-          uncheckTodo(message)
+          const todoID = event.target.parentElement.id
+          uncheckTodo(todoID)
         }}></span>
         <p className={`${props.completed?"task--completed":"task"}`}>{props.text}</p>
-        <span className="fa-regular fa-circle-xmark fa-lg icons close" onClick={(event)=>{
-          const message = event.target.parentElement.childNodes[2].textContent
-          deleteTodo(message)
-        }}></span>
+        <div className="rightButtons">
+          <Link to={`/edit/123`}>
+            <span className="fa-solid fa-pen-to-square fa-lg icons edit"></span>
+          </Link>
+          <span className="fa-regular fa-circle-xmark fa-lg icons close" onClick={(event)=>{
+            const todoID = event.target.parentElement.parentElement.id
+            deleteTodo(todoID)
+          }}></span>
+        </div>
       </li>
     )
 }

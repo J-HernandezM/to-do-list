@@ -1,5 +1,6 @@
 import React from "react"
 import { useLocalStorage } from "./useLocalStorage"
+import { v4 as uuidv4 } from 'uuid';
 
 
 //Creamos y nombramos este contexto
@@ -29,9 +30,11 @@ function useTodo(){
         }
     }else{return todo}
     })
+
+    const id = uuidv4()
     
     function addNewTodo(newTodotxt){
-        const newTodo = {text: newTodotxt, completed: false}
+        const newTodo = {text: newTodotxt, completed: false, id}
         const updateThisArray = [...todos]
         updateThisArray.push(newTodo)
         setTodos(updateThisArray)

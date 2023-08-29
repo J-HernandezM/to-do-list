@@ -24,8 +24,8 @@ div ul li .icons{
 }
 .todo{
     display: flex;
+    position: relative;
     align-items: center;
-    justify-content: space-between;
     position: relative;
 
     width: 85%;
@@ -38,11 +38,41 @@ div ul li .icons{
     border-radius: 8rem;
     border: 1px solid var(--onSfc);
 }
+.todo::after{
+    content: '';
+    position: absolute;
+    border-right: 2rem var(--surface5) solid;
+    border-top: 2rem var(--surface5) solid;
+    border-radius: 0 8rem 0 0;
+    width: 15%;
+    height: 35%;
+    top: -1.2rem;
+    right: -1.2rem;
+    z-index: 0;
+}
+.rightButtons{
+    position: absolute;
+    top: -10rem;
+    right: -14rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25rem;
+    gap: 4rem;
+    z-index: 10;
+}
 .check{
     transition: color 0.3s;
 }
 .check:hover{
     color: var(--complementary);
+    cursor: pointer;
+}
+.edit{
+    transition: color 0.3s;
+}
+.edit:hover{
+    color: var(--analogous2);
     cursor: pointer;
 }
 .close:hover{

@@ -1,17 +1,17 @@
 import React from 'react';
-import { useTodo } from './useTodo';
-import { TodoCounter } from '../TodoCounter';
-import { TodoSearch } from '../TodoSearch';
-import { TodoList } from '../TodoList';
-import { TodoItem } from '../TodoItem';
-import { CreateTodoButton } from '../CreateTodoButton';
-import { TodosLoading } from '../TodosLoading';
-import { TodosError } from '../TodosError';
-import { TodosEmpty } from '../TodosEmpty';
-import { Modal } from '../Modal';
-import { CreateTodo } from '../CreateTodo';
-import { SearchEmpty } from '../TodosEmpty/SearchEmpty';
-import { ChangeAlertWithListener } from '../ChangeAlert';
+import { useTodo } from '../useTodo';
+import { TodoCounter } from '../../UI/TodoCounter';
+import { TodoSearch } from '../../UI/TodoSearch';
+import { TodoList } from '../../UI/TodoList';
+import { TodoItem } from '../../UI/TodoItem';
+import { CreateTodoButton } from '../../UI/CreateTodoButton';
+import { TodosLoading } from '../../UI/TodosLoading';
+import { TodosError } from '../../UI/TodosError';
+import { TodosEmpty } from '../../UI/TodosEmpty';
+import { Modal } from '../../UI/Modal';
+import { CreateTodo } from '../../UI/CreateTodo';
+import { SearchEmpty } from '../../UI/TodosEmpty/SearchEmpty';
+import { ChangeAlertWithListener } from '../../UI/ChangeAlert';
  // eslint-disable-next-line
 const defaultTodos = [
   {text:'Cortar cebolla', completed: true},
@@ -21,7 +21,7 @@ const defaultTodos = [
 ]
 
 
-function App() {
+function Homepage() {
   const {
     loading,
     error,
@@ -79,7 +79,8 @@ function App() {
                 <TodoItem
                   setTodos={setTodos}
                   todos={todos} 
-                  key={todo.text} 
+                  key={todo.id} 
+                  todoID={todo.id}
                   text={todo.text} 
                   completed={todo.completed}/>
                 }
@@ -88,4 +89,4 @@ function App() {
         </>
   );
 }
-export default App;
+export default Homepage;

@@ -1,5 +1,5 @@
 import React from "react";
-import { withStorageListener } from "../withStorageListener";
+import { withStorageListener } from '../../withStorageListener'
 import './ChangeAlert.css'
 
 //Podemos acceder a las propiedades de nuestro HOC
