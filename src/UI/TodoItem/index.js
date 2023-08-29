@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './TodoItem.css'
 function TodoItem(props){
+  const navigate = useNavigate()
+
   function checkTodo(checkThisID){
     const updatedTodos=[]
     props.todos.forEach((todo)=>{
@@ -51,9 +53,11 @@ function TodoItem(props){
         }}></span>
         <p className={`${props.completed?"task--completed":"task"}`}>{props.text}</p>
         <div className="rightButtons">
-          <Link to={`/edit/123`}>
-            <span className="fa-solid fa-pen-to-square fa-lg icons edit"></span>
-          </Link>
+          <span className="fa-solid fa-pen-to-square fa-lg icons edit" onClick={
+            ()=>{
+              navigate(`/edit/${props.todoID}`)
+            }
+          }></span>
           <span className="fa-regular fa-circle-xmark fa-lg icons close" onClick={(event)=>{
             const todoID = event.target.parentElement.parentElement.id
             deleteTodo(todoID)

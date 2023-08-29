@@ -31,12 +31,19 @@ function useTodo(){
     }else{return todo}
     })
 
-    const id = uuidv4()
     
     function addNewTodo(newTodotxt){
+        const id = uuidv4()
         const newTodo = {text: newTodotxt, completed: false, id}
         const updateThisArray = [...todos]
         updateThisArray.push(newTodo)
+        setTodos(updateThisArray)
+    }
+    function editCurrentTodo(id, newTodotxt){
+        const updateThisArray = [...todos]
+        const index = updateThisArray.findIndex((todo)=>(todo.id==id))
+        const newTodo = {text: newTodotxt, completed: updateThisArray[index].completed, id}
+        updateThisArray.splice(index, 1, newTodo)
         setTodos(updateThisArray)
     }
 
@@ -53,6 +60,7 @@ function useTodo(){
             modalOn,
             setModalOn,
             addNewTodo,
+            editCurrentTodo,
             synchronize
         }
     )

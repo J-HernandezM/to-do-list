@@ -1,6 +1,14 @@
+import { CreateTodo } from "../../UI/CreateTodo"
+import { useTodo } from "../useTodo"
+
 function NewTodoPage() {
     return(
-        <p>New</p>
+        <div className="newTodo">
+            <CreateTodo               
+                title = {'Agrega un to-do'}
+                action = {'add'}
+            />
+        </div>
     )
 }
 

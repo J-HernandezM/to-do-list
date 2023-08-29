@@ -10,7 +10,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Homepage />}></Route>
                 <Route path='/new' element={<NewTodoPage />}></Route>
-                <Route path='/edit/:id' element={<EditTodoPage />}></Route>
+                <Route path='/edit/:slug' element={<EditTodoPage />}></Route>
                 <Route path='*' element={<NotFoundPage />}></Route>
             </Routes>
           </HashRouter>

@@ -28,15 +28,13 @@ function Homepage() {
     setTodos,
     todos,
     found,
-    modalOn,
     searchValue, 
     setSearchValue,
     totalTodos:total,
     completedTodos:completed,
-    setModalOn, 
-    addNewTodo,
     synchronize
   } = useTodo()
+
   return (
           <>
             <TodoCounter
@@ -48,15 +46,7 @@ function Homepage() {
                 searchValue={searchValue}
                 setSearchValue={setSearchValue}
               />
-              <CreateTodoButton 
-              setModalOn={setModalOn}
-              />
-              {modalOn && 
-                <Modal>
-                  <CreateTodo               
-                    setModalOn ={setModalOn}
-                    addNewTodo ={addNewTodo}/>
-                </Modal>}
+              <CreateTodoButton/>
             </div>
             {/* Aplicamos render props a TodoList */}   
             <TodoList 

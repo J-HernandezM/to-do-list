@@ -58,10 +58,13 @@ body {
   left:50%;
   transform: translate(-50%, -50%);
 }
-.modalBox{
+.modalBox, .newTodo{
   display: grid;
   place-items: center;
   width: 100vw;
   height: 100vh;
   background-color: #00000080;
+}
+.newTodo{
+  background-color: inherit;
 }
