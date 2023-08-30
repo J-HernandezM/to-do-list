@@ -8,8 +8,6 @@ import { CreateTodoButton } from '../../UI/CreateTodoButton';
 import { TodosLoading } from '../../UI/TodosLoading';
 import { TodosError } from '../../UI/TodosError';
 import { TodosEmpty } from '../../UI/TodosEmpty';
-import { Modal } from '../../UI/Modal';
-import { CreateTodo } from '../../UI/CreateTodo';
 import { SearchEmpty } from '../../UI/TodosEmpty/SearchEmpty';
 import { ChangeAlertWithListener } from '../../UI/ChangeAlert';
  // eslint-disable-next-line

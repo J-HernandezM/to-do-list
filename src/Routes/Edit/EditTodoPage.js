@@ -1,6 +1,5 @@
-import { useLocation, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { CreateTodo } from "../../UI/CreateTodo"
-import { useTodo } from "../useTodo"
 
 function EditTodoPage() {
     const { slug:id } = useParams()

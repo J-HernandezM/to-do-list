@@ -1,5 +1,4 @@
 import { CreateTodo } from "../../UI/CreateTodo"
-import { useTodo } from "../useTodo"
 
 function NewTodoPage() {
     return(

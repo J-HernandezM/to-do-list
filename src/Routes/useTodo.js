@@ -41,7 +41,7 @@ function useTodo(){
     }
     function editCurrentTodo(id, newTodotxt){
         const updateThisArray = [...todos]
-        const index = updateThisArray.findIndex((todo)=>(todo.id==id))
+        const index = updateThisArray.findIndex((todo)=>(todo.id===id))
         const newTodo = {text: newTodotxt, completed: updateThisArray[index].completed, id}
         updateThisArray.splice(index, 1, newTodo)
         setTodos(updateThisArray)

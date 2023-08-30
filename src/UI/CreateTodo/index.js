@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useRef } from "react"
 import './CreateTodo.css'
 import '../TodoSearch/TodoSearch.css'
 import '../CreateTodoButton/CreateTodoButton.css'
@@ -10,11 +10,7 @@ function CreateTodo({title, action, currentID}){
     const navigate = useNavigate()
     const [newTodoText, setNewTodoText] = React.useState('') 
 
-    const currentTodo = todos.find((todo)=>{
-        if(todo.id===currentID){
-            return todo
-        }
-    }) 
+    const currentTodo = todos.find((todo)=>todo.id===currentID)
     const myInputRef = useRef(null)
     if(currentTodo){
         myInputRef.current.defaultValue = currentTodo.text
