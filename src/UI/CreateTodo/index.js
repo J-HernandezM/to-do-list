@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { useTodo } from "../../Routes/useTodo"
 
 function CreateTodo({title, action, currentID}){
-    const {addNewTodo, editCurrentTodo, todos} = useTodo()
+    const {addNewTodo, editCurrentTodo, todos, loading} = useTodo()
     const navigate = useNavigate()
     const [newTodoText, setNewTodoText] = React.useState('') 
 
@@ -45,7 +45,7 @@ function CreateTodo({title, action, currentID}){
 
                     <span className="modalTextButtons modalCancel">Cancelar</span>
                 </button>
-                <button type="button" className="modalBtn" onClick={
+                <button disabled={loading} type="button" className="modalBtn" onClick={
                     ()=>{
                         action==='edit'?editCurrentTodo(currentID, newTodoText):addNewTodo(newTodoText)
                         navigate('/')
