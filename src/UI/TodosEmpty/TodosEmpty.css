@@ -2,7 +2,7 @@
     display: grid;
     place-items: center;
 
-    min-height: 200rem;
+    min-height: 200px;
 }
 .emptyText{
     font-size: var(--lg);

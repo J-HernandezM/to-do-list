@@ -1,14 +1,14 @@
 .todoInput{
-    height: 40rem;
-    min-width: 270rem;
-    padding-left: 20rem;
+    height: 40px;
+    min-width: 270px;
+    padding-left: 20px;
 
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 300;
     color: var(--onSfc);
 
     background-color: var(--surface3);
-    border-radius: 12rem;
+    border-radius: 12px;
     outline: 1px solid transparent;
     border: none;
 }

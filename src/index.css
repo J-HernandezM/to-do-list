@@ -19,13 +19,13 @@
 
 
   
-  --xs:12rem;
-  --sm:14rem;
-  --md:18rem;
-  --lg:24rem;
-  --xl:30rem;
+  --xs:12px;
+  --sm:14px;
+  --md:18px;
+  --lg:24px;
+  --xl:30px;
 
-  font-size: 6.25%;
+  /* font-size: 6.25%; */
 }
 
 *{
@@ -37,7 +37,7 @@ body {
   background-color: var(--background);
 
   color: var(--onPrimary);
-  font-size: 20rem;
+  font-size: 20px;
   font-family: 'Space Grotesk', sans-serif;
 }
 #root{
@@ -50,7 +50,7 @@ body {
   display: flex;
   align-items: center;
 
-  width: 340rem;
+  width: 340px;
 }
 #modal{
   position: fixed;

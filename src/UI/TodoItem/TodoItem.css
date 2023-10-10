@@ -6,7 +6,7 @@
 
     text-align: center;
     overflow-wrap: anywhere;
-    padding: 10rem 20rem 10rem 20rem;
+    padding: 10px 20px 10px 20px;
 }
 .task--completed{
     display: inline-block;
@@ -17,7 +17,7 @@
 
     text-align: center;
     overflow-wrap: anywhere;
-    padding: 10rem 20rem 10rem 20rem;
+    padding: 10px 20px 10px 20px;
 }
 div ul li .icons{
     color: var(--onSfc);
@@ -29,36 +29,36 @@ div ul li .icons{
     position: relative;
 
     width: 85%;
-    min-height: 55rem;
-    max-width: 350rem;
-    margin-bottom: 20rem;
-    padding: 0 10rem 0 10rem;
+    min-height: 55px;
+    max-width: 350px;
+    margin-bottom: 20px;
+    padding: 0 10px 0 10px;
 
     background-color: var(--surface5);
-    border-radius: 8rem;
+    border-radius: 8px;
     border: 1px solid var(--onSfc);
 }
 .todo::after{
     content: '';
     position: absolute;
-    border-right: 2rem var(--surface5) solid;
-    border-top: 2rem var(--surface5) solid;
-    border-radius: 0 8rem 0 0;
+    border-right: 2px var(--surface5) solid;
+    border-top: 2px var(--surface5) solid;
+    border-radius: 0 8px 0 0;
     width: 15%;
     height: 35%;
-    top: -1.2rem;
-    right: -1.2rem;
+    top: -1.2px;
+    right: -1.2px;
     z-index: 0;
 }
 .rightButtons{
     position: absolute;
-    top: -10rem;
-    right: -14rem;
+    top: -10px;
+    right: -14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 25rem;
-    gap: 4rem;
+    height: 25px;
+    gap: 4px;
     z-index: 10;
 }
 .check{
